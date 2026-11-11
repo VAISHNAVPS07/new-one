@@ -1,0 +1,1 @@
+Place approved corporate DOCX/PDF report templates here. Keep template versions under source control and record the selected template version in every generated report.

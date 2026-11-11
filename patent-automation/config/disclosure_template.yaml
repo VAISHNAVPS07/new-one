@@ -1,0 +1,42 @@
+# Data-driven definition of the corporate patent disclosure template.
+# Change the template by editing this file; no code changes needed.
+version: 1
+name: Corporate Patent Disclosure
+# Stripped from slide titles before matching, e.g. "Slide 3: Proposed Solution"
+title_prefix_strip: '^\s*slide\s*\d+\s*[:\-–.]\s*'
+sections:
+  - id: invention_title
+    title: Invention Title
+    patterns: ['invention title', 'title of (the )?invention', '^title$']
+    required: true
+    expects: [text]
+  - id: problem_statement
+    title: Problem Statement
+    patterns: ['problem statement', 'technical problem', '^problem$', 'background']
+    required: true
+    expects: [text]
+  - id: proposed_solution
+    title: Proposed Solution
+    patterns: ['proposed solution', 'solution', 'invention summary']
+    required: true
+    expects: [text]
+  - id: key_components
+    title: Key Components
+    patterns: ['key components', 'components', 'system elements']
+    required: true
+    expects: [bullets]
+  - id: technical_advantages
+    title: Technical Advantages
+    patterns: ['technical advantages', 'advantages', 'benefits']
+    required: true
+    expects: [bullets]
+  - id: architecture_diagram
+    title: Architecture / Diagram
+    patterns: ['architecture', 'diagram', 'block diagram', 'system overview']
+    required: false
+    expects: [image]
+  - id: existing_solutions
+    title: Existing Solutions
+    patterns: ['existing solutions?', 'prior art', 'known solutions?', 'related work']
+    required: false
+    expects: [text]
